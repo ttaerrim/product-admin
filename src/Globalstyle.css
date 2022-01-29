@@ -1,8 +1,6 @@
 /* Reset CSS */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Source+Sans+Pro&display=swap");
 * {
   box-sizing: border-box;
-  /* font-family: "Noto Sans KR", sans-serif; */
 }
 a {
   text-decoration: none;
@@ -49,7 +47,7 @@ button {
 /* Default CSS */
 body {
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   margin: 0;
   background-color: #fff;
   color: #222;

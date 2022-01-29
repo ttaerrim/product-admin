@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { CategoryContext } from "store/Contexts/Category";
 
 import Check from "layout/Check";
-
 const Checkbox = ({ value, checked }) => {
   const { cateObject, setCateObject } = useContext(CategoryContext);
 

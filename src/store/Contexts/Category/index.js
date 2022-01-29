@@ -1,11 +1,9 @@
 import { createContext, useState } from "react";
 
-import { data } from "utils/sampleData";
-
 const CategoryContext = createContext();
 
 const CategoryProvider = ({ children }) => {
-  const categories = [...data];
+  const categories = [...Array(5).keys()];
   const categoriesBool = [...Array(categories.length).fill(false)];
 
   let result = {};

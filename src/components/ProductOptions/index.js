@@ -3,9 +3,6 @@ import SectionWrapper from "layout/Section/SectionWrapper";
 import SectionHeader from "layout/Section/SectionHeader";
 import OptionItem from "components/ProductOptions/OptionItem";
 
-import Button from "layout/Button";
-import style from "components/ProductOptions/ProductOptions.module.css";
-
 import uuid from "utils/uuid";
 import OptionSet from "./OptionSet";
 
@@ -33,10 +30,12 @@ const ProductOptionIdx = () => {
 
   const onDelete = (setId, itemId) => {
     console.log(`${setId}에 있는 ${itemId}가 삭제되었습니다.`);
+    console.log();
 
     setOptionSetList((prev) =>
       prev.map((item) => {
         if (item.id !== setId) return item;
+        if (setId.id === null) console.log("??");
         return {
           ...item,
           optionList: item.optionList.filter((option) => option.id !== itemId),
@@ -60,26 +59,8 @@ const ProductOptionIdx = () => {
 
   return (
     <SectionWrapper>
-      <SectionHeader>
-        <div className={style.headerContainer}>
-          상품 옵션 *
-          <Button
-            onClick={addOptionSet}
-            className={style.addOptionsetBtn}
-            tag="add"
-          >
-            + 옵션 세트 추가
-          </Button>
-        </div>
-      </SectionHeader>
-
-      {optionSetList.length === 0 ? (
-        <div className={style.beforeContainer}>
-          <p>옵션세트를 추가하여 옵션을 구성해 주세요.</p>
-        </div>
-      ) : (
-        ""
-      )}
+      <SectionHeader>상품 옵션</SectionHeader>
+      <button onClick={addOptionSet}> 옵션 세트 추가</button>
 
       {optionSetList.map((it) => (
         <>
@@ -91,6 +72,7 @@ const ProductOptionIdx = () => {
             optionList={it}
             deleteOptionSet={deleteOptionSet}
           />
+          <OptionItem />
         </>
       ))}
     </SectionWrapper>
