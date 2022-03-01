@@ -72,7 +72,6 @@ const Admin = () => {
         </nav>
         <div>
           <div className={styles.label}>
-            <div className={styles.sectionName}>상품 등록</div>
             <Button tag="save">저장하기</Button>
           </div>
           <ProductPeriodSetup />
