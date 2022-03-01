@@ -37,9 +37,9 @@ const ProductExposurePeriod = () => {
       <SectionBodyContent>
         <ul>{userSelectionLists}</ul>
         <div className={styles.content}>
-          <Calendar />
+          <Calendar disabled={checkedRadio !== "노출 기간 설정"} />
           <p>~</p>
-          <Calendar />
+          <Calendar disabled={checkedRadio !== "노출 기간 설정"} />
         </div>
       </SectionBodyContent>
     </SectionBody>

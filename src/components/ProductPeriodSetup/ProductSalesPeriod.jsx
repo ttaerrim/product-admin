@@ -24,7 +24,6 @@ const ProductSalsePeriod = () => {
     dispatch(setPeriodActions.salesRadio(e.target.value));
   };
 
-  console.log(changedRadio);
   const userSelectionLists = userSelectionMockData.map((data) => (
     <li key={data.id}>
       <RadioInput
@@ -42,9 +41,9 @@ const ProductSalsePeriod = () => {
       <SectionBodyContent>
         <ul>{userSelectionLists}</ul>
         <div className={styles.content}>
-          <Calendar />
+          <Calendar disabled={changedRadio !== "판매 기간 설정"} />
           <p>~</p>
-          <Calendar />
+          <Calendar disabled={changedRadio !== "판매 기간 설정"} />
         </div>
       </SectionBodyContent>
     </SectionBody>
