@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import UploadImages from "components/UploadImages";
 
@@ -13,7 +13,7 @@ const Thumbnail = () => {
     <SectionBody className={styles.container}>
       <ContentBodyTitle>상품 썸네일</ContentBodyTitle>
       <SectionBodyContent className={styles.box}>
-        <UploadImages />
+        <UploadImages multiple={false} />
       </SectionBodyContent>
     </SectionBody>
   );

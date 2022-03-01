@@ -17,17 +17,21 @@ const AddImage = ({ multiple }) => {
   const changeFileHandler = (e) => {
     const files = e.target.files;
 
-    for (let i = 0; i < files.length; i++) {
-      setUploadedImg((prev) => [
-        { id: Math.random(), name: files[i].name },
-        ...prev,
-      ]);
+    if (!multiple) {
+      setUploadedImg([{ id: Math.random(), name: files[0].name }]);
+    } else {
+      for (let i = 0; i < files.length; i++) {
+        setUploadedImg((prev) => [
+          { id: Math.random(), name: files[i].name },
+          ...prev,
+        ]);
+      }
     }
   };
 
   const removeHandler = (e) => {
     const buttonId = e.target.id;
-    setUploadedImg(uploadedImg.filter((data) => data.id != buttonId));
+    setUploadedImg(uploadedImg.filter((data) => data.id !== buttonId));
   };
 
   return (
