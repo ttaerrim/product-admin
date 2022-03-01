@@ -1,4 +1,4 @@
-<h1 align="center"> Pre Onboarding 2nd 과제 - 상품 등록 </h1>
+<h1 align="center"> 관리자 상품 등록 페이지</h1>
 
 <h3 align="center"> 서비스 링크: https://stoic-kare-04f513.netlify.app/</h3>
 
