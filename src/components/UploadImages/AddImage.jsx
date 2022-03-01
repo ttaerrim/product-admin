@@ -31,7 +31,7 @@ const AddImage = ({ multiple }) => {
 
   const removeHandler = (e) => {
     const buttonId = e.target.id;
-    setUploadedImg(uploadedImg.filter((data) => data.id !== buttonId));
+    setUploadedImg(uploadedImg.filter((data) => data.id !== Number(buttonId)));
   };
 
   return (
