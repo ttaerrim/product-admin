@@ -1,8 +1,22 @@
+import { dateToString } from "utils/dateToString";
+
 const { configureStore, createSlice } = require("@reduxjs/toolkit");
 
 const periodInitialState = {
-  exposure: { radio: "제한 없음", calendar: "YYYY.MM.DD YY:MM" },
-  sales: { radio: "제한 없음", calendar: "YYYY.MM.DD YY:MM" },
+  exposure: {
+    radio: "제한 없음",
+    calendar: {
+      start: dateToString(new Date()),
+      end: dateToString(new Date()),
+    },
+  },
+  sales: {
+    radio: "제한 없음",
+    calendar: {
+      start: dateToString(new Date()),
+      end: dateToString(new Date()),
+    },
+  },
 };
 
 const setPeriodSlice = createSlice({
@@ -12,8 +26,20 @@ const setPeriodSlice = createSlice({
     exposureRadio(state, action) {
       state.exposure.radio = action.payload;
     },
+    exposureCalenderStart(state, action) {
+      state.exposure.calendar.start = action.payload;
+    },
+    exposureCalenderEnd(state, action) {
+      state.exposure.calendar.end = action.payload;
+    },
     salesRadio(state, action) {
       state.sales.radio = action.payload;
+    },
+    salesCalenderStart(state, action) {
+      state.sales.calendar.start = action.payload;
+    },
+    salesCalenderEnd(state, action) {
+      state.sales.calendar.end = action.payload;
     },
   },
 });

@@ -9,6 +9,7 @@ import ProductInfo from "./ProductInfo";
 import ProductOptions from "components/ProductOptions/index";
 import ProductPeriodSetup from "./ProductPeriodSetup";
 import ProductThumbnail from "./ProductThumbnail";
+import { useSelector } from "react-redux";
 
 const MockData = [
   { id: "m1", menu: "기본설정" },
@@ -28,6 +29,19 @@ const MockData = [
 ];
 
 const Admin = () => {
+  const { exposure, sales } = useSelector((state) => state.period);
+
+  const saveAll = () => {
+    alert(
+      `상품 노출 기한: ${exposure.radio} ${
+        exposure.radio === "노출 기간 설정" &&
+        `${exposure.calendar.start} ~ ${exposure.calendar.end}`
+      }\n상품 판매 기한: ${sales.radio} ${
+        sales.radio === "판매 기간 설정" &&
+        `${sales.calendar.start} ~ ${sales.calendar.end}`
+      }`
+    );
+  };
   return (
     <div className={styles.admin}>
       <header className={styles.header}>
@@ -70,9 +84,11 @@ const Admin = () => {
           })}
           <svg></svg>
         </nav>
-        <div>
+        <form onSubmit={saveAll}>
           <div className={styles.label}>
-            <Button tag="save">저장하기</Button>
+            <Button tag="save" type="submit">
+              저장하기
+            </Button>
           </div>
           <ProductPeriodSetup />
           <ProductInfo />
@@ -82,7 +98,7 @@ const Admin = () => {
           <ProductDelivery />
           <ProductBenefit />
           <Etc />
-        </div>
+        </form>
       </section>
     </div>
   );

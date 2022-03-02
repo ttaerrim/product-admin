@@ -18,24 +18,22 @@ function NewItem({
   };
 
   return (
-    <div>
-      <form id={`form-${order}`} className={styles.form}>
-        <Input
-          type="text"
-          placeholder="항목 제목 자유 입력"
-          onChange={handleChange}
-          value={newItemTitle}
-          required
-        />
-        <Input
-          type="text"
-          placeholder="내용을 입력해주세요."
-          onChange={handleChange2}
-          value={newItemContent}
-          required
-        />
-        <button onClick={handleDelete}>삭제</button>
-      </form>
+    <div id={`form-${order}`} className={styles.form}>
+      <Input
+        type="text"
+        placeholder="항목 제목 자유 입력"
+        onChange={handleChange}
+        value={newItemTitle}
+        required
+      />
+      <Input
+        type="text"
+        placeholder="내용을 입력해주세요."
+        onChange={handleChange2}
+        value={newItemContent}
+        required
+      />
+      <button onClick={handleDelete}>삭제</button>
     </div>
   );
 }

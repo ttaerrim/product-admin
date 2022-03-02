@@ -13,7 +13,6 @@ import styles from "./ProductExposurePeriod.module.css";
 
 const ProductExposurePeriod = () => {
   const dispatch = useDispatch();
-
   const checkedRadio = useSelector((state) => state.period.exposure.radio);
 
   const checkSelectionHandler = (e) => {
@@ -31,15 +30,22 @@ const ProductExposurePeriod = () => {
     </li>
   ));
 
+  const changeCalendar = (event) => {};
   return (
     <SectionBody className={styles.exposure}>
       <ContentBodyTitle>상품 노출 기한</ContentBodyTitle>
       <SectionBodyContent>
         <ul>{userSelectionLists}</ul>
         <div className={styles.content}>
-          <Calendar disabled={checkedRadio !== "노출 기간 설정"} />
+          <Calendar
+            label="exposure start"
+            disabled={checkedRadio !== "노출 기간 설정"}
+          />
           <p>~</p>
-          <Calendar disabled={checkedRadio !== "노출 기간 설정"} />
+          <Calendar
+            label="exposure end"
+            disabled={checkedRadio !== "노출 기간 설정"}
+          />
         </div>
       </SectionBodyContent>
     </SectionBody>

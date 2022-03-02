@@ -56,8 +56,6 @@ const ProductOptionIdx = () => {
     setOptionSetList((prev) => [...prev, newOptionList]);
   };
 
-  console.log(testOptionSet);
-
   const deleteOptionSet = (targetId) => {
     const newOptionSetList = optionSetList.filter((it) => it.id !== targetId);
     setOptionSetList(newOptionSetList);

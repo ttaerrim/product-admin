@@ -41,9 +41,15 @@ const ProductSalsePeriod = () => {
       <SectionBodyContent>
         <ul>{userSelectionLists}</ul>
         <div className={styles.content}>
-          <Calendar disabled={changedRadio !== "판매 기간 설정"} />
+          <Calendar
+            label="sales start"
+            disabled={changedRadio !== "판매 기간 설정"}
+          />
           <p>~</p>
-          <Calendar disabled={changedRadio !== "판매 기간 설정"} />
+          <Calendar
+            label="sales end"
+            disabled={changedRadio !== "판매 기간 설정"}
+          />
         </div>
       </SectionBodyContent>
     </SectionBody>
